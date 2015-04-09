@@ -5,23 +5,37 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <title>Login Form</title>
     </head>
     <body>
+        <div class="container">
+
+<div class="jumbotron">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGcem1YIM7FEUJATbTiwD3vi-y1ExGjwKR4yr5nXWXHMYCJe_-FA" alt="W3Schools.com" style="width:104px;height:142px">
         <h2>User Login</h2>
         <form method="post" action="j_security_check">
             <fieldset>
-                <div>
+                
+                    <div class="row">
+                        <div class="col-md-4">
                     <label for="j_username">Username:</label>
                     <input type="text" name="j_username" />
                 </div>
-                <div>
+                        </div>
+                <div class="row">
+                        <div class="col-md-4">
                     <label for="j_password">Password:</label>
                     <input type="password" name="j_password" />
+                </div>
                 </div>
                 <input type="submit" value="Submit"/>
                 <input type="reset" value="Reset"/>
             </fieldset>
         </form>
-    </body>
+</div>
+        </div>
+</body>
 </html>

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.llokesh.mp4.service;
+package edu.iit.sat.itmd4515.llokesh.mp4.service;
 
 
 import edu.iit.sat.itmd4515.llokesh.mp4.domain.Category;

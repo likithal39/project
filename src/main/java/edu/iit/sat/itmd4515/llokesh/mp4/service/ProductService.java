@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.llokesh.mp4.service;
+package edu.iit.sat.itmd4515.llokesh.mp4.service;
 
 
-import edu.iit.sat.itmd4515.llokesh.mp4.domain.security.User;
+import edu.iit.sat.itmd4515.llokesh.mp4.domain.Product;
 import java.util.List;
 import javax.ejb.Stateless;
 
@@ -15,15 +15,17 @@ import javax.ejb.Stateless;
  * @author spyrisos
  */
 @Stateless
-public class UserService extends AbstractService<User>{
+public class ProductService extends AbstractService<Product> {
 
-    public UserService() {
-        super(User.class);
+    public ProductService() {
+        super(Product.class);
     }
+
+    
 
     @Override
-    public List<User> findAll() {
+    public List<Product> findAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

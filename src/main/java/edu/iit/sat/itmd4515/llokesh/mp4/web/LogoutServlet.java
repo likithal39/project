@@ -37,6 +37,11 @@ public class LogoutServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+             out.println("<style>\n" +
+"  body {background-color:lightgray}\n" +
+"  h1   {color:blue}\n" +
+"  p    {color:green}\n" +
+"</style>");
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -44,6 +49,7 @@ public class LogoutServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>You are logged out!  <br><br> LogoutServlet at " + request.getContextPath() + "</h1>");
+           out.println("<h2> To continue to use our services kindly login back");
             out.println("<a href=\"" + request.getContextPath() + "/productPortal/\">Login</a>");
             out.println("</body>");
             out.println("</html>");

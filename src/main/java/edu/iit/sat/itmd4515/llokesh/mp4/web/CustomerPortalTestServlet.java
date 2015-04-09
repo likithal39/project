@@ -5,8 +5,10 @@
  */
 package edu.iit.sat.itmd4515.llokesh.mp4.web;
 
-import com.mycompany.llokesh.mp4.service.CustomerService;
+import edu.iit.sat.itmd4515.llokesh.mp4.service.CustomerService;
+import edu.iit.sat.itmd4515.llokesh.mp4.domain.Category;
 import edu.iit.sat.itmd4515.llokesh.mp4.domain.Customer;
+import edu.iit.sat.itmd4515.llokesh.mp4.domain.Manufacturer;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -38,30 +40,58 @@ public class CustomerPortalTestServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet CustomerPortalTestServlet</title>");            
+            out.println("<title>Servlet ProductPortalTestServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet CustomerPortalTestServlet at " + request.getContextPath() + "</h1>");
+            out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n" +
+"  <link rel=\"stylesheet\" href=\"http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css\">\n" +
+"        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n" +
+"");
+            out.println("<div class=\"row\">\n" +
+"                        <div class=\"col-md-4\">");
+            out.println("<h1>customer details are " + request.getContextPath() + "</h1>");
+
+            out.println("<h2>" + request.getRemoteUser() + "</h2>");
+
+            String test = request.getRemoteUser();
+            String test1 = request.toString();
+            if (request.isUserInRole("fan")) 
+            {
+                Customer customer = customerService.findByUsername(request.getRemoteUser());
+                out.println("<style>\n" +
+"  body {background-color:lightgray}\n" +
+"  h1   {color:blue}\n" +
+"  p    {color:green}\n" +
+"</style>");
+                out.println("<ul>");
+                out.println("<li>Customer name is: " + customer.getCust_name() + "</li> ");
+                out.println("<li>Customer has the following address : " + customer.getCust_address() + "</li>");
+                        out.println("</ul></li>");
+                    } else {
+                        out.println("</li>");
+                    }
+                
+                out.println("</ul></li>");
+                out.println("</ul>");
+                out.println("</div>");
+                out.println("</div>");
             
-            if (request.isUserInRole("fan")) {
-                Customer l = customerService.findByUsername(request.getRemoteUser());
-                out.println("<h2>" + l.getCust_name()  + "</h2>");
-            }
 
             out.println("<a href=\"" + request.getContextPath() + "/logout\">Logout</a>");
 
             out.println("</body>");
             out.println("</html>");
+        } catch (Exception e){
+            log(e.getMessage());
         }
     }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -101,3 +131,4 @@ public class CustomerPortalTestServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+

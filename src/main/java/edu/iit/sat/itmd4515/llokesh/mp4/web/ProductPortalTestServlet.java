@@ -5,8 +5,8 @@
  */
 package edu.iit.sat.itmd4515.llokesh.mp4.web;
 
-import com.mycompany.llokesh.mp4.service.ManufacturerService;
-import com.mycompany.llokesh.mp4.service.ProductService;
+import edu.iit.sat.itmd4515.llokesh.mp4.service.ManufacturerService;
+import edu.iit.sat.itmd4515.llokesh.mp4.service.ProductService;
 import edu.iit.sat.itmd4515.llokesh.mp4.domain.Category;
 import edu.iit.sat.itmd4515.llokesh.mp4.domain.Manufacturer;
 
@@ -49,6 +49,12 @@ public class ProductPortalTestServlet extends HttpServlet {
             out.println("<title>Servlet ProductPortalTestServlet</title>");
             out.println("</head>");
             out.println("<body>");
+            out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n" +
+"  <link rel=\"stylesheet\" href=\"http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css\">\n" +
+"        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n" +
+"");
+            out.println("<div class=\"row\">\n" +
+"                        <div class=\"col-md-4\">");
             out.println("<h1>Manufacturer details are " + request.getContextPath() + "</h1>");
 
             out.println("<h2>" + request.getRemoteUser() + "</h2>");
@@ -58,8 +64,14 @@ public class ProductPortalTestServlet extends HttpServlet {
             if (request.isUserInRole("manufacturer")) 
             {
                 Manufacturer manufacturer = manufacturerService.findByUsername(request.getRemoteUser());
+                out.println("<style>\n" +
+"  body {background-color:lightgray}\n" +
+"  h1   {color:blue}\n" +
+"  p    {color:green}\n" +
+"</style>");
                 out.println("<ul>");
-                out.println("<li>Manufacturer name is: " + manufacturer.getMan_name() + " whose title is: " + manufacturer.getMan_title() + "</li>");
+                out.println("<li>Manufacturer name is: " + manufacturer.getMan_name() + "</li> ");
+                out.println("<li>Manufacturer belongs to the following company : " + manufacturer.getMan_title() + "</li>");
                 out.println("<li>Consists of products of names: " + manufacturer.getProduct().getProd_name() + "</li>");
                 out.println("<li>Products have further following categories:<ul>");
                 for (Category s : manufacturer.getCategories()) {
@@ -80,6 +92,8 @@ public class ProductPortalTestServlet extends HttpServlet {
                 }
                 out.println("</ul></li>");
                 out.println("</ul>");
+                out.println("</div>");
+                out.println("</div>");
             }
 
             out.println("<a href=\"" + request.getContextPath() + "/logout\">Logout</a>");
