@@ -46,7 +46,7 @@ public class CustomerPortalTestServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ProductPortalTestServlet</title>");
+            out.println("<title>Servlet CustomerPortalTestServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n" +
