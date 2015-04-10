@@ -97,8 +97,7 @@ public class ProductPortalTestServlet extends HttpServlet {
             }
 
             out.println("<a href=\"" + request.getContextPath() + "/logout\">Logout</a>");
-            out.println("<h3> To login through different user</h3>");
-//out.println("<a href =\"http://localhost:8080/llokesh-mp4-ejb/customerPortal/\">Customer</a>");
+            
             out.println("</body>");
             out.println("</html>");
         } catch (Exception e){

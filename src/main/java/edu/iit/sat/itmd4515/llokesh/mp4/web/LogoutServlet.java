@@ -51,6 +51,8 @@ public class LogoutServlet extends HttpServlet {
             out.println("<h1>You are logged out!  <br><br> LogoutServlet at " + request.getContextPath() + "</h1>");
            out.println("<h2> To continue to use our services kindly login back");
             out.println("<a href=\"" + request.getContextPath() + "/productPortal/\">Login</a>");
+            out.println("<h3> To login through different user</h3>");
+out.println("<a href=\"" + request.getContextPath() + "/customerPortal/\">Login as Customer</a>");
             out.println("</body>");
             out.println("</html>");
         }
