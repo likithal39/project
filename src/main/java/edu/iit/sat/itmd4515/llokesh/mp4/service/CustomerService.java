@@ -14,7 +14,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author spyrisos
+ * @author likitha
  */
 @Stateless
 public class CustomerService {

@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author spyrisos
+ * @author likitha
  */
 @WebServlet(name = "ProductPortalTestServlet", urlPatterns = {"/productPortal", "/productPortal/"})
 public class ProductPortalTestServlet extends HttpServlet {

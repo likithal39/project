@@ -12,7 +12,7 @@ import javax.ejb.Stateless;
 
 /**
  *
- * @author spyrisos
+ * @author likitha
  */
 @Stateless
 public class UserService extends AbstractService<User>{

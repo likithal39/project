@@ -33,7 +33,6 @@ public class BaseEntity {
     /**
      * Set the value of LastUpdated
      *
-     * @param LastUpdated new value of LastUpdated
      */
     @PreUpdate
     @PrePersist

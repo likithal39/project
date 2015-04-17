@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author spyrisos
+ * @author likitha
  */
 @WebServlet(name = "CustomerPortalTestServlet", urlPatterns = {"/customerPortal","/customerPortal/"})
 public class CustomerPortalTestServlet extends HttpServlet {
@@ -42,7 +42,7 @@ public class CustomerPortalTestServlet extends HttpServlet {
             throws ServletException, IOException {
          response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+            /* TODO output your page here. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");

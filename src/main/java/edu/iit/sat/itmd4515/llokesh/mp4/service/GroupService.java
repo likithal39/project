@@ -12,7 +12,7 @@ import javax.ejb.Stateless;
 
 /**
  *
- * @author spyrisos
+ * @author likitha
  */
 @Stateless
 public class GroupService extends AbstractService<Group>{

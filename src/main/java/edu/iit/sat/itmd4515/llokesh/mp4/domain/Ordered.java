@@ -67,7 +67,6 @@ public class Ordered implements Serializable {
     /**
      * Get the value of status
      *
-     * @return the value of status
      */
     public Ordered() {
     }

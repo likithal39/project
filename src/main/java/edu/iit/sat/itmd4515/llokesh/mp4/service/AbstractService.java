@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author spyrisos
+ * @author likitha
  * @param <T>
  */
 public abstract class AbstractService<T> {
